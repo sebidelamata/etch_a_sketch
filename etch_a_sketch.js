@@ -1,3 +1,4 @@
+let etchSquares;
 const etchContainer = document.querySelector(".etch-a-sketch-container");
 const canvasSizeButton = document.querySelector("#canvas-size-button");
 
@@ -96,6 +97,16 @@ function selectCanvasSize(){
     boardDims.setWidth = prompt("Enter desired canvas width", 16);
     etchContainer.innerHTML = "";
     createBoard();
+    let staticBoardSize = 160;
+    let desiredPixels = (staticBoardSize / boardDims.numRows).toFixed(0);
+    // select our etch squares
+    etchSquares = document.querySelectorAll(".etch-square");
+    // adjust the padding to fit squares in same area
+    etchSquares.forEach(square => {
+        square.style.padding = String(desiredPixels) + "px";
+    }
+    )
+    
     initializePaintBrush();
 }
 

@@ -26,9 +26,6 @@ button{
 
 
 .etch-square {
-    border: 2px;
-    border-color: black;
-    margin: 2px;
     background-color: aqua;
     display: flex;
     padding: 10px;
